@@ -1,0 +1,69 @@
+/* src/components/Hero.module.css */
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Começa um pouco abaixo */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Container principal da seção */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh; /* Ocupa 80% da altura da tela */
+  padding: 2rem;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  /* Aplica a animação a todo o conteúdo */
+  animation: fadeIn 1s ease-out;
+}
+
+/* Título principal */
+.title {
+  font-size: 3.5rem; /* Tamanho grande para impacto */
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--dark-gray); /* Usamos o cinza escuro para o título principal */
+}
+
+/* Destaque para a palavra "apaixonam" */
+.highlight {
+  color: var(--purple); /* A palavra-chave ganha a cor da marca */
+}
+
+/* Subtítulo */
+.subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #555; /* Um cinza um pouco mais suave */
+}
+
+/* Botão de Chamada para Ação (CTA) */
+.ctaButton {
+  display: inline-block;
+  background-color: var(--purple);
+  color: var(--white);
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 50px; /* Bordas arredondadas para um visual moderno */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px); /* Efeito de "levantar" ao passar o mouse */
+  box-shadow: 0 10px 20px rgba(106, 13, 173, 0.2); /* Sombra roxa sutil */
+}

@@ -1,9 +1,12 @@
+// src/pages/Home.jsx
+import Hero from "../components/Hero.jsx";
+
 function Home() {
   return (
-    <div>
-      <h1>Página Inicial</h1>
-      <p>Bem-vindo ao site da Devéra!</p>
-    </div>
+    <>
+      <Hero />
+      {/* Aqui, no futuro, adicionaremos outras seções da Home, como "Serviços" e "Portfólio" */}
+    </>
   );
 }
 
