@@ -1,0 +1,37 @@
+/* src/components/Button.module.css */
+
+/* Estilo base para todos os botões */
+.button {
+  display: inline-block;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border: 2px solid transparent; /* Borda transparente para não "pular" no hover */
+  border-radius: 50px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Variante Primária (fundo roxo) */
+.primary {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(106, 13, 173, 0.2);
+}
+
+/* Variante Secundária (fundo laranja) */
+.secondary {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(255, 127, 80, 0.25);
+}

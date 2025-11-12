@@ -50,19 +50,6 @@
   color: #555; /* Um cinza um pouco mais suave */
 }
 
-/* Botão de Chamada para Ação (CTA) */
-.ctaButton {
-  display: inline-block;
-  background-color: var(--purple);
-  color: var(--white);
-  font-family: var(--font-primary);
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 1rem 2.5rem;
-  border-radius: 50px; /* Bordas arredondadas para um visual moderno */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 .ctaButton:hover {
   transform: translateY(-3px); /* Efeito de "levantar" ao passar o mouse */
   box-shadow: 0 10px 20px rgba(106, 13, 173, 0.2); /* Sombra roxa sutil */

@@ -1,5 +1,6 @@
 // src/components/Hero.jsx
 import styles from "./Hero.module.css";
+import Button from "./Button.jsx"; // 1. Importe o componente Button
 
 function Hero() {
   return (
@@ -13,9 +14,11 @@ function Hero() {
           Transformamos ideias em websites e aplicações web modernas,
           interativas e de alta performance com foco em design e resultados.
         </p>
-        <a href="/contato" className={styles.ctaButton}>
+
+        {/* 2. Substitua o <a> antigo pelo componente Button */}
+        <Button to="/contato" variant="primary">
           Vamos conversar sobre seu projeto
-        </a>
+        </Button>
       </div>
     </section>
   );
