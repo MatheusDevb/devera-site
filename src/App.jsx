@@ -1,8 +1,17 @@
+// src/App.jsx
+import { Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar.jsx";
+
 function App() {
   return (
-    <div>
-      <h1>Devéra</h1>
-    </div>
+    <>
+      <Navbar />
+      <main>
+        <Outlet />{" "}
+        {/* O conteúdo da página atual (Home, Sobre, etc.) será renderizado aqui */}
+      </main>
+      {/* Futuramente, podemos adicionar um <Footer /> aqui */}
+    </>
   );
 }
 
