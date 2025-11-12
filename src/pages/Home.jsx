@@ -1,11 +1,12 @@
 // src/pages/Home.jsx
 import Hero from "../components/Hero.jsx";
+import ServicesSection from "../components/ServicesSection.jsx"; // 1. Importe a nova seção
 
 function Home() {
   return (
     <>
       <Hero />
-      {/* Aqui, no futuro, adicionaremos outras seções da Home, como "Serviços" e "Portfólio" */}
+      <ServicesSection /> {/* 2. Adicione a seção aqui */}
     </>
   );
 }
