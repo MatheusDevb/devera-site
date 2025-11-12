@@ -61,3 +61,25 @@
 .navLink:hover {
   color: var(--orange);
 }
+
+/* 
+  Estilo para o link ativo.
+  - Usamos a cor laranja para destacar.
+  - Adicionamos um pseudo-elemento ::after para criar uma pequena
+    linha sutil abaixo do link ativo, um toque de design moderno.
+*/
+.active {
+  color: var(--orange);
+  position: relative; /* Necessário para o posicionamento do ::after */
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Posição da linha abaixo do link */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%; /* Largura da linha */
+  height: 2px; /* Espessura da linha */
+  background-color: var(--orange);
+}

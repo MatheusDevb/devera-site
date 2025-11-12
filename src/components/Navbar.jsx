@@ -1,38 +1,56 @@
 // src/components/Navbar.jsx
-import { Link } from "react-router-dom";
-import styles from "./Navbar.module.css"; // 1. Importa o CSS Module
+import { NavLink } from "react-router-dom"; // 1. Mude a importação para NavLink
+import styles from "./Navbar.module.css";
 
 function Navbar() {
   return (
-    // 2. Usa a classe .navbar no container principal
     <nav className={styles.navbar}>
-      {/* 3. Usa a classe .logo para o link da home */}
-      <Link to="/" className={styles.logo}>
+      {/* O logo pode continuar sendo um Link normal ou NavLink, tanto faz aqui */}
+      <NavLink to="/" className={styles.logo}>
         Devéra
-      </Link>
+      </NavLink>
 
-      {/* 4. Usa a classe .navList para a lista */}
       <ul className={styles.navList}>
         <li>
-          {/* 5. E a classe .navLink para cada link */}
-          <Link to="/sobre" className={styles.navLink}>
+          {/* 2. Substitua Link por NavLink e use a função no className */}
+          <NavLink
+            to="/sobre"
+            className={({ isActive }) =>
+              isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+            }
+          >
             Sobre
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/servicos" className={styles.navLink}>
+          <NavLink
+            to="/servicos"
+            className={({ isActive }) =>
+              isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+            }
+          >
             Serviços
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/portfolio" className={styles.navLink}>
+          <NavLink
+            to="/portfolio"
+            className={({ isActive }) =>
+              isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+            }
+          >
             Portfólio
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/contato" className={styles.navLink}>
+          <NavLink
+            to="/contato"
+            className={({ isActive }) =>
+              isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+            }
+          >
             Contato
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>
