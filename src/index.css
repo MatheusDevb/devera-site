@@ -1,0 +1,61 @@
+/* src/index.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700;800&display=swap");
+
+/* 
+  1. Variáveis de Cor e Fontes (Root)
+  ------------------------------------
+  Aqui definimos nossas cores e fontes principais para reutilizar em todo o projeto.
+*/
+:root {
+  --purple: #6a0dad;
+  --orange: #ff7f50;
+  --dark-gray: #1a1a1a;
+  --light-gray: #f0f0f0;
+  --white: #ffffff;
+
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Inter", sans-serif;
+}
+
+/* 
+  2. Reset e Padrões Globais (Body)
+  ------------------------------------
+  Resetamos margens e definimos fontes e cores padrão para o corpo do site.
+*/
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: var(--font-secondary); /* Fonte padrão para textos */
+  background-color: var(--white);
+  color: var(--dark-gray);
+
+  -webkit-font-smoothing: antialiased; /* Melhora a renderização das fontes */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 
+  3. Padrões para Títulos
+  ------------------------------------
+  Definimos a fonte primária para todos os títulos (h1, h2, etc).
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-primary); /* Fonte padrão para títulos */
+  color: var(--purple);
+}
+
+/* 
+  4. Reset para Links
+  ------------------------------------
+  Removemos a decoração padrão dos links.
+*/
+a {
+  color: inherit; /* Links herdam a cor do texto pai */
+  text-decoration: none; /* Remove o sublinhado */
+}
