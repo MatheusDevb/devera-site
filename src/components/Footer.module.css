@@ -1,0 +1,37 @@
+/* src/components/Footer.module.css */
+
+.footer {
+  background-color: var(--dark-gray); /* Fundo escuro para contraste */
+  color: var(--light-gray); /* Texto claro */
+  padding: 2rem;
+  margin-top: 4rem; /* Empurra o rodapé para baixo, criando um espaço do conteúdo acima */
+}
+
+.footerContent {
+  max-width: 1200px; /* Limita a largura do conteúdo para melhor legibilidade em telas grandes */
+  margin: 0 auto; /* Centraliza o conteúdo */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que os itens quebrem para a linha de baixo em telas pequenas */
+  gap: 1rem;
+}
+
+.footerContent p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLinks a {
+  color: var(--light-gray);
+  transition: color 0.2s ease-in-out;
+}
+
+.socialLinks a:hover {
+  color: var(--orange); /* Efeito hover laranja, mantendo a consistência */
+}
