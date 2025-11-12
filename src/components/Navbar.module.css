@@ -1,0 +1,63 @@
+/* src/components/Navbar.module.css */
+
+/* 
+  Container principal do Navbar 
+  - display: flex -> Alinha os itens (logo e lista de links) horizontalmente.
+  - justify-content: space-between -> Empurra o logo para a esquerda e a lista para a direita.
+  - align-items: center -> Centraliza os itens verticalmente.
+  - padding -> Cria um espaçamento interno.
+*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem; /* 1rem vertical, 2rem horizontal */
+  background-color: var(--white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Uma sombra sutil para dar profundidade */
+  position: sticky; /* Faz o menu ficar fixo no topo ao rolar */
+  top: 0;
+  z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+}
+
+/* 
+  Estilo para o logo/nome da empresa 
+  - Usamos a fonte primária e a cor roxa que definimos globalmente.
+*/
+.logo {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--purple);
+}
+
+/* 
+  Estilo para a lista de links (<ul>)
+  - Removemos os marcadores de lista.
+  - display: flex -> Alinha os itens da lista (os <li>) horizontalmente.
+*/
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem; /* Cria um espaço entre cada item da lista */
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+  Estilo para cada link da navegação
+  - Adicionamos uma transição suave para o efeito hover.
+*/
+.navLink {
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s ease-in-out;
+}
+
+/* 
+  Efeito hover: O que acontece quando o mouse passa por cima do link.
+  - Mudamos a cor do link para a nossa cor laranja.
+*/
+.navLink:hover {
+  color: var(--orange);
+}
