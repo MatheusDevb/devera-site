@@ -14,28 +14,36 @@ function Contato() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    // Verificação de segurança para as variáveis de ambiente
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceID || !templateID || !publicKey) {
+      console.error(
+        "As variáveis de ambiente do EmailJS não foram carregadas."
+      );
+      alert(
+        "O serviço de contato está temporariamente indisponível. Por favor, tente mais tarde."
+      );
+      return;
+    }
+
     if (!name || !email || !message) {
       alert("Por favor, preencha todos os campos.");
       return;
     }
 
-    setIsSending(true); // Desabilita o botão enquanto envia
+    setIsSending(true);
 
-    // 2. Crie o objeto de parâmetros para o template
     const templateParams = {
       name: name,
       email: email,
       message: message,
     };
 
-    // 3. Use a função emailjs.send
     emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
+      .send(serviceID, templateID, templateParams, publicKey)
       .then((response) => {
         console.log("EMAIL ENVIADO", response.status, response.text);
         alert(`Obrigado pelo seu contato, ${name}! Responderei em breve.`);
@@ -50,7 +58,7 @@ function Contato() {
         );
       })
       .finally(() => {
-        setIsSending(false); // Reabilita o botão
+        setIsSending(false);
       });
   };
 
