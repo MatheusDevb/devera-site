@@ -5,6 +5,7 @@ import Button from "./Button.jsx";
 // 1. Importando as imagens dos projetos
 import project1Image from "../assets/projeto-1.png";
 import project2Image from "../assets/projeto-2.png";
+import project3Image from "../assets/projeto-dataage-1.png";
 
 // 2. Criando a lista com os dados dos projetos
 const projects = [
@@ -21,6 +22,13 @@ const projects = [
     description:
       "Uma breve descrição do que foi feito neste projeto, os desafios e as tecnologias utilizadas.",
     link: "/portfolio/projeto-2",
+  },
+  {
+    image: project3Image,
+    title: "ERP - Data Age",
+    description:
+      "Uma breve descrição do que foi feito neste projeto, os desafios e as tecnologias utilizadas.",
+    link: "/portfolio/projeto-dataage-1",
   },
 ];
 
