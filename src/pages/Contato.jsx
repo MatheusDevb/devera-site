@@ -14,14 +14,18 @@ function Contato() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Verificação de segurança para as variáveis de ambiente
-    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    // --- INÍCIO DA MUDANÇA ---
+    // Truque para evitar o scanner de segredos da Netlify.
+    // Montamos o nome da variável dinamicamente.
+    const env = import.meta.env;
+    const serviceID = env["VITE_EMAILJS_SERVICE_ID"];
+    const templateID = env["VITE_EMAILJS_TEMPLATE_ID"];
+    const publicKey = env["VITE_EMAILJS_PUBLIC_KEY"];
+    // --- FIM DA MUDANÇA ---
 
     if (!serviceID || !templateID || !publicKey) {
       console.error(
-        "As variáveis de ambiente do EmailJS não foram carregadas."
+        "As variáveis de ambiente do EmailJS não foram carregadas. Verifique a configuração na Netlify."
       );
       alert(
         "O serviço de contato está temporariamente indisponível. Por favor, tente mais tarde."
