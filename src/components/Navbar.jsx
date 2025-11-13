@@ -1,13 +1,14 @@
 // src/components/Navbar.jsx
 import { NavLink } from "react-router-dom"; // 1. Mude a importação para NavLink
 import styles from "./Navbar.module.css";
+import logoSrc from "../assets/logo.svg";
 
 function Navbar() {
   return (
     <nav className={styles.navbar}>
-      {/* O logo pode continuar sendo um Link normal ou NavLink, tanto faz aqui */}
-      <NavLink to="/" className={styles.logo}>
-        Devéra
+      {/* 2. Use uma tag <img> para o logo */}
+      <NavLink to="/" className={styles.logoLink}>
+        <img src={logoSrc} alt="Logo da Devéra" className={styles.logoImg} />
       </NavLink>
 
       <ul className={styles.navList}>
