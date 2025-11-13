@@ -3,21 +3,21 @@ import styles from "./PortfolioPreview.module.css";
 import Button from "./Button.jsx";
 
 // 1. Importando as imagens dos projetos
-import project1Image from "../assets/projeto-1.jpg";
-import project2Image from "../assets/projeto-2.jpg";
+import project1Image from "../assets/projeto-1.png";
+import project2Image from "../assets/projeto-2.png";
 
 // 2. Criando a lista com os dados dos projetos
 const projects = [
   {
     image: project1Image,
-    title: "Nome do Projeto 1",
+    title: "Clínica Médica",
     description:
       "Uma breve descrição do que foi feito neste projeto, os desafios e as tecnologias utilizadas.",
     link: "/portfolio/projeto-1", // Link para a página de detalhes do projeto (faremos no futuro)
   },
   {
     image: project2Image,
-    title: "Nome do Projeto 2",
+    title: "Tapeçaria Automotiva",
     description:
       "Uma breve descrição do que foi feito neste projeto, os desafios e as tecnologias utilizadas.",
     link: "/portfolio/projeto-2",
