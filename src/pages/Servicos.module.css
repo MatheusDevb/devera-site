@@ -1,0 +1,86 @@
+/* src/pages/Servicos.module.css */
+
+.servicesPage {
+  /* Não precisa de padding aqui, pois o header e o CTA já têm */
+}
+
+.header {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--light-gray);
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.servicesList {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.serviceItem {
+  display: grid;
+  grid-template-columns: 100px 1fr; /* Coluna do ícone fixa, texto flexível */
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+}
+
+.serviceIcon {
+  color: var(--purple);
+  margin-top: 0.5rem;
+}
+
+.serviceText h2 {
+  font-size: 2rem;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+}
+
+.serviceText p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: #f0e4ff;
+  color: var(--purple);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .serviceItem {
+    grid-template-columns: 1fr; /* Coluna única */
+    text-align: center;
+  }
+
+  .serviceIcon {
+    margin: 0 auto 1rem auto;
+  }
+
+  .tags {
+    justify-content: center;
+  }
+}
