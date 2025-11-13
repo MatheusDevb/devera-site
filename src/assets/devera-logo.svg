@@ -1,0 +1,36 @@
+<svg width="285" height="60" viewBox="0 0 285 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradiente para o texto "Devera" -->
+    <linearGradient id="text-gradient" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#6A0DAD" />
+      <stop offset="100%" stop-color="#C724B1" />
+    </linearGradient>
+    
+    <!-- Filtro para o efeito de brilho (glow ) -->
+    <!-- Ajustei o desvio padrão para ser um pouco mais sutil e não ocupar tanto espaço extra -->
+    <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Fundo para visualização (opcional, pode ser removido ou tornado transparente) -->
+  <!-- <rect width="285" height="60" fill="#1A1A1A"/> -->
+
+  <!-- Grupo de texto principal -->
+  <g font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="42" font-weight="500" text-anchor="middle">
+    
+    <!-- Tag de abertura "<" -->
+    <text x="22" y="42" fill="#FF7F50" filter="url(#neon-glow)">&lt;</text>
+    
+    <!-- Texto "Devera" -->
+    <text x="122" y="42" fill="url(#text-gradient)">Devera</text>
+    
+    <!-- Tag de fechamento "/>" -->
+    <text x="222" y="42" fill="#FF7F50" filter="url(#neon-glow)">/&gt;</text>
+  
+  </g>
+</svg>
