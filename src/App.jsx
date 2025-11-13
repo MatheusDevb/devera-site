@@ -1,9 +1,8 @@
 // src/App.jsx
-import { Routes, Route } from "react-router-dom"; // 1. Importe Routes e Route
+import { Routes, Route } from "react-router-dom";
 
-// Componentes de Layout
-import Navbar from "./components/Navbar.jsx";
-import Footer from "./components/Footer.jsx";
+// Importando o novo componente de Layout
+import Layout from "./components/Layout.jsx";
 
 // Importando todas as páginas
 import Home from "./pages/Home.jsx";
@@ -14,24 +13,20 @@ import Contato from "./pages/Contato.jsx";
 
 function App() {
   return (
-    <>
-      {/* 2. Navbar e Footer ficam fora do Routes para aparecerem em todas as páginas */}
-      <Navbar />
+    <Routes>
+      {/* Rota Pai que usa o Layout */}
+      <Route path="/" element={<Layout />}>
+        {/* Rotas Filhas que serão renderizadas dentro do Outlet do Layout */}
+        <Route index element={<Home />} />
+        <Route path="sobre" element={<Sobre />} />
+        <Route path="servicos" element={<Servicos />} />
+        <Route path="portfolio" element={<Portfolio />} />
+        <Route path="contato" element={<Contato />} />
 
-      <main>
-        {/* 3. O Routes define a área onde as páginas serão trocadas */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/sobre" element={<Sobre />} />
-          <Route path="/servicos" element={<Servicos />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contato" element={<Contato />} />
-          {/* Futuramente, podemos adicionar uma rota para "Página não encontrada" aqui */}
-        </Routes>
-      </main>
-
-      <Footer />
-    </>
+        {/* Futuramente, uma rota para página não encontrada */}
+        {/* <Route path="*" element={<NotFound />} /> */}
+      </Route>
+    </Routes>
   );
 }
 

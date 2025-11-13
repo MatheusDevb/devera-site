@@ -1,7 +1,8 @@
 // src/pages/Servicos.jsx
+import { Helmet } from "react-helmet-async";
 import styles from "./Servicos.module.css";
 import { FiLayout, FiCode, FiTrendingUp } from "react-icons/fi";
-import CTASection from "../components/CTASection.jsx"; // Reutilizaremos nossa seção de CTA!
+import CTASection from "../components/CTASection.jsx"; // Reutilizando a seção de CTA
 
 const services = [
   {
@@ -39,37 +40,46 @@ const services = [
 
 function Servicos() {
   return (
-    <div className={styles.servicesPage}>
-      <div className={styles.header}>
-        <h1>Soluções para o seu sucesso digital</h1>
-        <p>
-          Do conceito à realidade, oferecemos um conjunto completo de serviços
-          para construir e escalar sua presença online.
-        </p>
-      </div>
+    <>
+      <Helmet>
+        <title>Serviços | Devéra</title>
+        <meta
+          name="description"
+          content="Oferecemos um conjunto completo de serviços, incluindo Design UI/UX, Desenvolvimento Web Sob Medida e Otimização de Performance (SEO)."
+        />
+      </Helmet>
 
-      <div className={styles.servicesList}>
-        {services.map((service, index) => (
-          <div key={index} className={styles.serviceItem}>
-            <div className={styles.serviceIcon}>{service.icon}</div>
-            <div className={styles.serviceText}>
-              <h2>{service.title}</h2>
-              <p>{service.description}</p>
-              <div className={styles.tags}>
-                {service.tags.map((tag, i) => (
-                  <span key={i} className={styles.tag}>
-                    {tag}
-                  </span>
-                ))}
+      <div className={styles.servicesPage}>
+        <div className={styles.header}>
+          <h1>Soluções para o seu sucesso digital</h1>
+          <p>
+            Do conceito à realidade, oferecemos um conjunto completo de serviços
+            para construir e escalar sua presença online.
+          </p>
+        </div>
+
+        <div className={styles.servicesList}>
+          {services.map((service, index) => (
+            <div key={index} className={styles.serviceItem}>
+              <div className={styles.serviceIcon}>{service.icon}</div>
+              <div className={styles.serviceText}>
+                <h2>{service.title}</h2>
+                <p>{service.description}</p>
+                <div className={styles.tags}>
+                  {service.tags.map((tag, i) => (
+                    <span key={i} className={styles.tag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      {/* Seção de CTA no final da página para incentivar a ação */}
-      <CTASection />
-    </div>
+        <CTASection />
+      </div>
+    </>
   );
 }
 
