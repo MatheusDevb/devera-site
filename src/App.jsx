@@ -10,7 +10,8 @@ import Sobre from "./pages/Sobre.jsx";
 import Servicos from "./pages/Servicos.jsx";
 import Portfolio from "./pages/Portfolio.jsx";
 import Contato from "./pages/Contato.jsx";
-import ProjectDetail from "./pages/ProjectDetail.jsx"; // 1. Importe o novo componente
+import ProjectDetail from "./pages/ProjectDetail.jsx";
+import NotFound from "./pages/NotFound.jsx"; // 1. Importe o novo componente
 
 function App() {
   return (
@@ -22,11 +23,11 @@ function App() {
         <Route path="sobre" element={<Sobre />} />
         <Route path="servicos" element={<Servicos />} />
         <Route path="portfolio" element={<Portfolio />} />
-
-        {/* 2. Adicione a Rota Dinâmica aqui */}
         <Route path="portfolio/:projectId" element={<ProjectDetail />} />
-
         <Route path="contato" element={<Contato />} />
+
+        {/* 2. Adicione a Rota "Catch-All" aqui */}
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

@@ -29,7 +29,7 @@ const projects = [
     title: "ERP - Data Age",
     description:
       "Uma breve descrição do que foi feito neste projeto, os desafios e as tecnologias utilizadas.",
-    link: "/portfolio/projeto-3", // Corrigi o link para corresponder ao que definimos nas rotas
+    link: "/portfolio/projeto-3",
   },
 ];
 
@@ -46,7 +46,6 @@ function PortfolioPreview() {
       <h2 className={styles.sectionTitle}>Projetos em Destaque</h2>
       <div className={styles.projectsGrid}>
         {projects.map((project, index) => (
-          // Transformei o card em um link para a página de detalhes
           <a href={project.link} key={index} className={styles.projectCard}>
             <img
               src={project.image}
