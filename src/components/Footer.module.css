@@ -1,37 +1,45 @@
-/* src/components/Footer.module.css */
-
 .footer {
-  background-color: var(--dark-gray); /* Fundo escuro para contraste */
-  color: var(--light-gray); /* Texto claro */
-  padding: 2rem;
-  margin-top: 4rem; /* Empurra o rodapé para baixo, criando um espaço do conteúdo acima */
+  background-color: var(--dark-gray);
+  color: var(--white);
+  padding: 1rem 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
 }
 
 .footerContent {
-  max-width: 1200px; /* Limita a largura do conteúdo para melhor legibilidade em telas grandes */
-  margin: 0 auto; /* Centraliza o conteúdo */
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap; /* Permite que os itens quebrem para a linha de baixo em telas pequenas */
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
-.footerContent p {
+.footerLogo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.footerLinks {
+  list-style: none;
+  padding: 0;
   margin: 0;
-  font-size: 0.9rem;
-}
-
-.socialLinks {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
-.socialLinks a {
-  color: var(--light-gray);
-  transition: color 0.2s ease-in-out;
+.footerLinks a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.socialLinks a:hover {
-  color: var(--orange); /* Efeito hover laranja, mantendo a consistência */
+.footerLinks a:hover {
+  color: var(--orange);
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
 }

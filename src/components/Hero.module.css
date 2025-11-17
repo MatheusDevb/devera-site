@@ -1,5 +1,3 @@
-/* src/components/Hero.module.css */
-
 /* Animação de fade-in */
 @keyframes fadeIn {
   from {
@@ -12,45 +10,53 @@
   }
 }
 
-/* Container principal da seção */
-.hero {
+.heroSection {
+  position: relative; /* Essencial para o posicionamento do fundo */
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 80vh; /* Ocupa 80% da altura da tela */
+  min-height: 80vh; /* Altura da seção */
   padding: 2rem;
   text-align: center;
+  overflow: hidden; /* Garante que nada vaze para fora da seção */
 }
 
+/* 
+  Container para as partículas.
+  Ele fica posicionado no fundo, ocupando todo o espaço da seção.
+*/
+.particlesContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* 
+  Container para o conteúdo de texto.
+  Precisa de um z-index maior para ficar na frente das partículas.
+*/
 .heroContent {
+  position: relative;
+  z-index: 1;
   max-width: 800px;
-  /* Aplica a animação a todo o conteúdo */
-  animation: fadeIn 1s ease-out;
+  color: var(--white); /* Garante que o texto seja branco */
 }
 
-/* Título principal */
-.title {
-  font-size: 3.5rem; /* Tamanho grande para impacto */
-  font-weight: 800;
-  line-height: 1.2;
+.heroContent h1 {
+  font-size: 4rem; /* Ajuste o tamanho conforme necessário */
+  font-family: var(--font-primary);
   margin-bottom: 1rem;
-  color: var(--dark-gray); /* Usamos o cinza escuro para o título principal */
 }
 
-/* Destaque para a palavra "apaixonam" */
 .highlight {
-  color: var(--purple); /* A palavra-chave ganha a cor da marca */
+  color: var(--orange);
 }
 
-/* Subtítulo */
-.subtitle {
-  font-size: 1.2rem;
-  line-height: 1.6;
+.heroContent p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 2rem;
-  color: #555; /* Um cinza um pouco mais suave */
-}
-
-.ctaButton:hover {
-  transform: translateY(-3px); /* Efeito de "levantar" ao passar o mouse */
-  box-shadow: 0 10px 20px rgba(106, 13, 173, 0.2); /* Sombra roxa sutil */
 }

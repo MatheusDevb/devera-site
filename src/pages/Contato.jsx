@@ -90,7 +90,7 @@ function Contato() {
             <div className={styles.contactDetails}>
               <div className={styles.detailItem}>
                 <FiMail size={20} />
-                <span>seu.email@devera.com</span>
+                <span>devera.contato@gmail.com</span>
               </div>
               <div className={styles.detailItem}>
                 <FiMapPin size={20} />

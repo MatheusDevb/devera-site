@@ -39,7 +39,7 @@ function Sobre() {
             <h1>Mais que uma agência, um parceiro de tecnologia.</h1>
             <p>
               A Devéra nasceu da paixão por transformar ideias em realidade
-              digital. Eu sou [Seu Nome], fundador e desenvolvedor principal.
+              digital. Eu sou Matheus, fundador e desenvolvedor principal.
               Minha missão é ir além do código e construir soluções que não
               apenas funcionem perfeitamente, mas que também encantem e gerem
               resultados reais para o seu negócio.

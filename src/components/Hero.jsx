@@ -1,23 +1,28 @@
 // src/components/Hero.jsx
 import styles from "./Hero.module.css";
-import Button from "./Button.jsx"; // 1. Importe o componente Button
+import Button from "./Button.jsx";
+import ParticlesBackground from "./ParticlesBackground.jsx"; // 1. Importe o componente
 
 function Hero() {
   return (
-    <section className={styles.hero}>
+    <section className={styles.heroSection}>
+      {/* 2. Adicione o componente de partículas */}
+      <div className={styles.particlesContainer}>
+        <ParticlesBackground />
+      </div>
+
+      {/* 3. O conteúdo fica por cima */}
       <div className={styles.heroContent}>
-        <h1 className={styles.title}>
-          Criamos experiências digitais que{" "}
+        <h1>
+          Design e código que{" "}
           <span className={styles.highlight}>apaixonam</span>.
         </h1>
-        <p className={styles.subtitle}>
-          Transformamos ideias em websites e aplicações web modernas,
-          interativas e de alta performance com foco em design e resultados.
+        <p>
+          Transformamos ideias em experiências digitais memoráveis. Vamos
+          construir algo incrível juntos?
         </p>
-
-        {/* 2. Substitua o <a> antigo pelo componente Button */}
         <Button to="/contato" variant="primary">
-          Vamos conversar sobre seu projeto
+          Fale Conosco
         </Button>
       </div>
     </section>
