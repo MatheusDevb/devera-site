@@ -1,10 +1,18 @@
 // src/components/CTASection.jsx
 import styles from "./CTASection.module.css";
-import Button from "./Button.jsx"; // Vamos reutilizar nosso componente de botão!
+import Button from "./Button.jsx";
+import useFadeIn from "../hooks/useFadeIn.js"; // 1. Importe o hook
 
 function CTASection() {
+  // 2. Use o hook para obter a ref e o estado de visibilidade
+  const [sectionRef, isVisible] = useFadeIn();
+
   return (
-    <section className={styles.cta}>
+    // 3. Adicione a ref e as classes de animação ao elemento <section>
+    <section
+      ref={sectionRef}
+      className={`${styles.cta} fade-in ${isVisible ? "visible" : ""}`}
+    >
       <div className={styles.ctaContent}>
         <h2 className={styles.title}>Vamos construir algo incrível juntos?</h2>
         <p className={styles.subtitle}>

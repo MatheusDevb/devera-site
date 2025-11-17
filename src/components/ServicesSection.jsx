@@ -1,6 +1,6 @@
 // src/components/ServicesSection.jsx
 import styles from "./ServicesSection.module.css";
-// Importando ícones da biblioteca 'Feather Icons' (parte do react-icons)
+import useFadeIn from "../hooks/useFadeIn.js";
 import { FiCode, FiLayout, FiTrendingUp } from "react-icons/fi";
 
 const services = [
@@ -25,8 +25,15 @@ const services = [
 ];
 
 function ServicesSection() {
+  // 1.Capture a variável 'isVisible' retornada pelo hook.
+  const [sectionRef, isVisible] = useFadeIn();
+
   return (
-    <section className={styles.services}>
+    // 2.Adicione as classes de animação dinamicamente.
+    <section
+      ref={sectionRef}
+      className={`${styles.services} fade-in ${isVisible ? "visible" : ""}`}
+    >
       <h2 className={styles.sectionTitle}>Nossas Soluções</h2>
       <div className={styles.servicesGrid}>
         {services.map((service, index) => (

@@ -1,0 +1,131 @@
+.projectDetailPage {
+  max-width: 900px; /* Limita a largura para melhor legibilidade */
+  margin: 4rem auto; /* Centraliza a página e adiciona espaço no topo/baixo */
+  padding: 0 2rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Cabeçalho --- */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.category {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--light-purple);
+  color: var(--purple);
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.header h1 {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--medium-gray);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* --- Imagem Principal --- */
+.imageContainer {
+  margin-bottom: 3rem;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Detalhes (Tecnologias e Links) --- */
+.detailsContainer {
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.detailsContainer h2 {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  color: var(--dark-gray);
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--orange);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.techTag {
+  background-color: #f0f0f0;
+  color: var(--medium-gray);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+}
+
+/* --- Página Não Encontrada --- */
+.notFound {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.notFound h1 {
+  font-size: 2.5rem;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+}
+
+.notFound p {
+  font-size: 1.1rem;
+  color: var(--medium-gray);
+  margin-bottom: 2rem;
+}
+
+.notFound a {
+  color: var(--orange);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.notFound a:hover {
+  text-decoration: underline;
+}
