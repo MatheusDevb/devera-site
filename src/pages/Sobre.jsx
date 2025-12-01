@@ -1,4 +1,3 @@
-// src/pages/Sobre.jsx
 import styles from "./Sobre.module.css";
 import profilePic from "../assets/profile-pic.jpeg";
 import { Helmet } from "react-helmet-async";
@@ -30,7 +29,7 @@ function Sobre() {
           name="description"
           content="Conheça a história da Devéra, nossa missão, valores e a filosofia por trás da criação de experiências digitais que apaixonam."
         />
-        {/* Você pode adicionar outras tags de head aqui, se necessário */}
+        {/* adicionar outras tags de head aqui, se necessário */}
       </Helmet>
       <div className={styles.aboutPage}>
         {/* Seção 1: Apresentação */}
@@ -39,9 +38,9 @@ function Sobre() {
             <h1>Mais que uma agência, um parceiro de tecnologia.</h1>
             <p>
               A Devéra nasceu da paixão por transformar ideias em realidade
-              digital. Eu sou Matheus, fundador e desenvolvedor principal.
-              Minha missão é ir além do código e construir soluções que não
-              apenas funcionem perfeitamente, mas que também encantem e gerem
+              digital. Eu sou Matheus, fundador e desenvolvedor principal. Minha
+              missão é ir além do código e construir soluções que não apenas
+              funcionem perfeitamente, mas que também encantem e gerem
               resultados reais para o seu negócio.
             </p>
             <p>
