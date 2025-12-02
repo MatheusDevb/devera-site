@@ -1,62 +1,80 @@
-/* Animação de fade-in */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px); /* Começa um pouco abaixo */
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* src/components/Hero.module.css */
 
-.heroSection {
-  position: relative; /* Essencial para o posicionamento do fundo */
+.hero {
+  position: relative; /* Essencial para o posicionamento do vídeo e do conteúdo */
+  height: 100vh;
+  min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 80vh; /* Altura da seção */
-  padding: 2rem;
   text-align: center;
+  padding: 2rem;
   overflow: hidden; /* Garante que nada vaze para fora da seção */
 }
 
-/* 
-  Container para as partículas.
-  Ele fica posicionado no fundo, ocupando todo o espaço da seção.
-*/
-.particlesContainer {
+.videoWrapper {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 1; /* Fica atrás do conteúdo */
 }
 
-/* 
-  Container para o conteúdo de texto.
-  Precisa de um z-index maior para ficar na frente das partículas.
-*/
-.heroContent {
+.videoWrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    26,
+    26,
+    26,
+    0.7
+  ); /* Overlay escuro para dar contraste ao texto */
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que o vídeo cubra todo o espaço, sem distorcer */
+}
+
+.content {
   position: relative;
-  z-index: 1;
+  z-index: 2; /* Fica na frente do vídeo */
+  color: #ffffff;
   max-width: 800px;
-  color: var(--white); /* Garante que o texto seja branco */
 }
 
-.heroContent h1 {
-  font-size: 4rem; /* Ajuste o tamanho conforme necessário */
-  font-family: var(--font-primary);
-  margin-bottom: 1rem;
+.title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .highlight {
-  color: var(--orange);
+  color: var(--color-orange); /* Usando a variável de cor que já definimos */
 }
 
-.heroContent p {
+.subtitle {
   font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 2rem;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  opacity: 0.9;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+  }
 }
