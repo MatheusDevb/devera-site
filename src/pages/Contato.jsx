@@ -5,7 +5,6 @@ import emailjs from "@emailjs/browser";
 import styles from "./Contato.module.css";
 import Button from "../components/Button.jsx";
 import { FiMail, FiMapPin } from "react-icons/fi";
-
 function Contato() {
   const form = useRef(); // 2. Crie a referência para o formulário
   const [isSending, setIsSending] = useState(false);
@@ -15,7 +14,6 @@ function Contato() {
   const handleChange = (event) => {
     setText(event.target.value);
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsSending(true);
