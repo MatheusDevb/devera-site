@@ -1,14 +1,15 @@
 // src/components/Layout.jsx
 import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar.jsx";
-import Footer from "./Footer.jsx";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+
+// REMOVA a importação do ScrollToTop daqui
 
 function Layout() {
   return (
     <>
       <Navbar />
       <main>
-        {/* O Outlet renderiza o componente da rota filha aqui */}
         <Outlet />
       </main>
       <Footer />

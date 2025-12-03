@@ -10,6 +10,11 @@ function Contato() {
   const form = useRef(); // 2. Crie a referência para o formulário
   const [isSending, setIsSending] = useState(false);
   const [statusMessage, setStatusMessage] = useState(""); // Para feedback ao usuário
+  const [text, setText] = useState("");
+  const characterLimit = 4000;
+  const handleChange = (event) => {
+    setText(event.target.value);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -98,8 +103,14 @@ function Contato() {
                   id="message"
                   name="message"
                   rows="6"
+                  value={text}
                   required
+                  onChange={handleChange}
+                  maxlength={characterLimit}
                 ></textarea>
+                <p>
+                  {text.length}/{characterLimit} characters
+                </p>
               </div>
               <Button type="submit" variant="primary" disabled={isSending}>
                 {isSending ? "Enviando..." : "Enviar Mensagem"}
