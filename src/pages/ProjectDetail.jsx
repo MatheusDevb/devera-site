@@ -1,101 +1,141 @@
 // src/pages/ProjectDetail.jsx
+import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { projects } from "../data/projectsData"; // Importa os dados
 import styles from "./ProjectDetail.module.css";
-import Button from "../components/Button";
-
-// --- BANCO DE DADOS DOS PROJETOS ---
-// No futuro, isso poderia vir de uma API, mas por enquanto, vamos mantê-lo aqui.
-import project1Image from "../assets/projeto-1.png";
-import project2Image from "../assets/projeto-2.png";
-import project3Image from "../assets/projeto-dataage-1.png";
-
-const projectsData = {
-  "projeto-1": {
-    title: "Clínica Médica",
-    category: "Website Institucional",
-    image: project1Image,
-    description:
-      "O desafio era criar um site que transmitisse confiança, profissionalismo e acolhimento. Desenvolvemos uma plataforma com agendamento online, informações sobre tratamentos e um blog de saúde, tudo com um design limpo e acessível.",
-    technologies: ["React", "CSS Modules", "React Router"],
-    liveUrl: "#", // Link para o site ao vivo
-  },
-  "projeto-2": {
-    title: "Tapeçaria Automotiva",
-    category: "Website Institucional",
-    image: project2Image,
-    description:
-      "Para esta empresa tradicional, o objetivo era modernizar sua presença online. Criamos um catálogo visual dos serviços e materiais, com um design que reflete a qualidade artesanal do trabalho, facilitando o contato de novos clientes.",
-    technologies: ["HTML5", "CSS3", "JavaScript"],
-    liveUrl: "#",
-  },
-  "projeto-3": {
-    title: "ERP - Data Age",
-    category: "Aplicação Web",
-    image: project3Image,
-    description:
-      "Desenvolvimento de um módulo crucial para um sistema de ERP (Enterprise Resource Planning). O foco foi criar uma interface de usuário (UI) complexa, mas intuitiva, para gerenciamento de dados, com alta performance e segurança.",
-    technologies: ["React", "Redux", "Styled-Components", "API RESTful"],
-    liveUrl: "#",
-  },
-};
-// --- FIM DO BANCO DE DADOS ---
+import NotFound from "./NotFound";
 
 function ProjectDetail() {
-  const { projectId } = useParams(); // Pega o 'projectId' da URL
-  const project = projectsData[projectId];
+  // Pega o ID do projeto da URL (ex: /portfolio/clinica-medica)
+  const { projectId } = useParams();
 
-  // Se o projeto não for encontrado, exibe uma mensagem
+  // Busca o projeto correspondente no array de dados
+  const project = projects.find((p) => p.id === projectId);
+
+  // Se o projeto não existir, mostra a página 404
   if (!project) {
-    return (
-      <div className={styles.notFound}>
-        <h1>Projeto não encontrado</h1>
-        <p>O projeto que você está procurando não existe ou foi movido.</p>
-        <Link to="/portfolio">Voltar ao Portfólio</Link>
-      </div>
-    );
+    return <NotFound />;
   }
+
+  // Lógica para navegação Próximo/Anterior
+  const currentIndex = projects.findIndex((p) => p.id === projectId);
+  const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
+  const nextProject =
+    currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
 
   return (
     <>
+      {/* SEO: Título e descrição específicos para cada projeto */}
       <Helmet>
         <title>{project.title} | Portfólio Devéra</title>
         <meta
           name="description"
-          content={project.description.substring(0, 160)}
+          content={project.challenge.substring(0, 155)}
         />
       </Helmet>
 
-      <div className={styles.projectDetailPage}>
-        <header className={styles.header}>
-          <span className={styles.category}>{project.category}</span>
-          <h1>{project.title}</h1>
-          <p className={styles.description}>{project.description}</p>
+      <div className={styles.projectDetail}>
+        {/* Banner Hero com imagem de fundo */}
+        <header className={styles.hero}>
+          <div className={styles.heroImage}>
+            <img src={project.mainImage} alt={project.title} />
+          </div>
+          <div className={styles.heroOverlay}>
+            <div className={styles.heroContent}>
+              <span className={styles.category}>{project.category}</span>
+              <h1>{project.title}</h1>
+            </div>
+          </div>
         </header>
 
-        <div className={styles.imageContainer}>
-          <img src={project.image} alt={`Imagem do projeto ${project.title}`} />
-        </div>
+        {/* Container principal do conteúdo */}
+        <div className={styles.container}>
+          {/* Resumo do Projeto em Cards */}
+          <section className={styles.summary}>
+            <div className={styles.summaryCard}>
+              <h3>Cliente</h3>
+              <p>{project.client}</p>
+            </div>
+            <div className={styles.summaryCard}>
+              <h3>Serviços</h3>
+              <p>{project.services}</p>
+            </div>
+            <div className={styles.summaryCard}>
+              <h3>Tecnologias</h3>
+              <p>{project.technologies}</p>
+            </div>
+            <div className={styles.summaryCard}>
+              <h3>Ver Projeto</h3>
+              {project.liveUrl !== "#" ? (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.liveButton}
+                >
+                  Visitar Site →
+                </a>
+              ) : (
+                <p className={styles.comingSoon}>Em breve</p>
+              )}
+            </div>
+          </section>
 
-        <div className={styles.detailsContainer}>
-          <h2>Tecnologias Utilizadas</h2>
-          <div className={styles.techList}>
-            {project.technologies.map((tech) => (
-              <span key={tech} className={styles.techTag}>
-                {tech}
-              </span>
-            ))}
-          </div>
+          {/* Seção: O Desafio */}
+          <section className={styles.contentSection}>
+            <h2>O Desafio</h2>
+            <p>{project.challenge}</p>
+          </section>
 
-          <div className={styles.links}>
-            <Button
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver Projeto Online
-            </Button>
-          </div>
+          {/* Seção: A Solução */}
+          <section className={styles.contentSection}>
+            <h2>A Solução</h2>
+            <p>{project.solution}</p>
+          </section>
+
+          {/* Galeria de Imagens (se houver mais de uma imagem) */}
+          {project.gallery && project.gallery.length > 0 && (
+            <section className={styles.gallery}>
+              <h2>Galeria do Projeto</h2>
+              <div className={styles.galleryGrid}>
+                {project.gallery.map((image, index) => (
+                  <div key={index} className={styles.galleryItem}>
+                    <img
+                      src={image}
+                      alt={`${project.title} - Captura ${index + 1}`}
+                    />
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Navegação entre projetos */}
+          <nav className={styles.projectNav}>
+            <div className={styles.navItem}>
+              {prevProject && (
+                <Link
+                  to={`/portfolio/${prevProject.id}`}
+                  className={styles.navLink}
+                >
+                  <span className={styles.navLabel}>← Projeto Anterior</span>
+                  <span className={styles.navTitle}>{prevProject.title}</span>
+                </Link>
+              )}
+            </div>
+            <div className={styles.navItem}>
+              {nextProject && (
+                <Link
+                  to={`/portfolio/${nextProject.id}`}
+                  className={styles.navLink}
+                >
+                  <span className={styles.navLabel}>Próximo Projeto →</span>
+                  <span className={styles.navTitle}>{nextProject.title}</span>
+                </Link>
+              )}
+            </div>
+          </nav>
         </div>
       </div>
     </>
