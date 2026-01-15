@@ -9,6 +9,9 @@ import project5Image from "../assets/clinica2.jpg";
 import project6Image from "../assets/auto-sport1.jpg";
 import project7Image from "../assets/auto-sport2.jpg";
 import project8Image from "../assets/auto-sport3.jpg";
+import project9Image from "../assets/dataage1.jpg";
+import project10Image from "../assets/projeto-dataage-2.png";
+import project11Image from "../assets/projeto-dataage-3.png";
 
 export const projects = [
   {
@@ -17,7 +20,7 @@ export const projects = [
     category: "Website Institucional",
     mainImage: project1Image,
     liveUrl: "https://www.google.com", // Substituir pelo link real
-    client: "Nome da Clínica",
+    client: "Clínica Vida e Saúde",
     services: "UI/UX Design, Desenvolvimento Web",
     technologies: "React, CSS Modules",
     challenge:
@@ -31,7 +34,7 @@ export const projects = [
     title: "Tapeçaria Automotiva",
     category: "Website Institucional",
     mainImage: project2Image,
-    liveUrl: "#",
+    liveUrl: "https://dataage.com.br/tapecariaautosport/index.html",
     client: "Nome da Tapeçaria",
     services: "Desenvolvimento Web, SEO",
     technologies: "React, Vite",
@@ -46,7 +49,7 @@ export const projects = [
     title: "ERP - Data Age",
     category: "Aplicação Web",
     mainImage: project3Image,
-    liveUrl: "#",
+    liveUrl: "https://dataage.com.br/",
     client: "Data Age Systems",
     services: "Desenvolvimento de Interface",
     technologies: "React, Styled-Components",
@@ -54,6 +57,6 @@ export const projects = [
       "Modernizar a interface de um sistema de ERP legado, tornando-a mais intuitiva e agradável para os usuários finais, sem alterar o back-end existente.",
     solution:
       "Reconstruímos toda a camada de front-end com React, criando uma biblioteca de componentes reutilizáveis. A nova interface é mais limpa, rápida e totalmente responsiva, melhorando drasticamente a produtividade e a satisfação dos usuários do sistema.",
-    gallery: [project3Image],
+    gallery: [project3Image, project9Image, project10Image, project11Image],
   },
 ];

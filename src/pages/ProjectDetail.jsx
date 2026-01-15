@@ -74,10 +74,10 @@ function ProjectDetail() {
                   rel="noopener noreferrer"
                   className={styles.liveButton}
                 >
-                  Visitar Site →
+                  Visitar Site
                 </a>
               ) : (
-                <p className={styles.comingSoon}>Em breve</p>
+                <p className={styles.liveButton}>Acessar Site</p>
               )}
             </div>
           </section>
