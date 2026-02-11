@@ -1,7 +1,17 @@
 // src/components/ServicesSection.jsx
 import styles from "./ServicesSection.module.css";
 import useFadeIn from "../hooks/useFadeIn.js";
-import { FiCode, FiLayout, FiTrendingUp } from "react-icons/fi";
+import { FaGoogle } from "react-icons/fa";
+import { SiGoogleads } from "react-icons/si";
+import { LuImageMinus } from "react-icons/lu";
+import {
+  FiCode,
+  FiLayout,
+  FiTrendingUp,
+  FiBarChart2,
+  FiFeather,
+  FiSettings,
+} from "react-icons/fi";
 
 const services = [
   {
@@ -21,6 +31,24 @@ const services = [
     title: "Otimização e SEO",
     description:
       "Posicionamos seu site no topo dos buscadores, otimizando a estrutura e o conteúdo para atrair mais visitantes qualificados.",
+  },
+  {
+    icon: <SiGoogleads size={40} />,
+    title: "Gestão de Google Ads",
+    description:
+      "Gerenciamos suas campanhas de Google Ads com estratégia e análise de dados, atraindo clientes qualificados e maximizando seu retorno sobre investimento.",
+  },
+  {
+    icon: <LuImageMinus size={40} />,
+    title: "Identidade Visual",
+    description:
+      "Criamos identidades visuais marcantes e coerentes, desde logotipos até guias de marca, para fortalecer o posicionamento do seu negócio.",
+  },
+  {
+    icon: <FiSettings size={40} />,
+    title: "Manutenção e Suporte",
+    description:
+      "Oferecemos suporte técnico contínuo, atualizações de segurança e otimizações de performance para manter seu site sempre no ar e funcionando perfeitamente.",
   },
 ];
 

@@ -5,8 +5,8 @@ import useFadeIn from "../hooks/useFadeIn.js"; // 1. Importe o hook
 
 // Importando as imagens dos projetos
 import project1Image from "../assets/projeto-1.png";
-import project2Image from "../assets/projeto-2.png";
 import project3Image from "../assets/projeto-dataage-1.png";
+import project4Image from "../assets/projeto-aram01.png";
 
 // Criando a lista com os dados dos projetos
 const projects = [
@@ -14,21 +14,21 @@ const projects = [
     image: project1Image,
     title: "Clínica Médica",
     description:
-      "Uma breve descrição do que foi feito neste projeto, os desafios e as tecnologias utilizadas.",
+      "Site institucional responsivo com foco em agendamento simplificado e experiência do usuário em dispositivos móveis.",
     link: "/portfolio/projeto-1",
   },
   {
-    image: project2Image,
-    title: "Tapeçaria Automotiva",
+    image: project4Image,
+    title: "Aram Ambiental",
     description:
-      "Uma breve descrição do que foi feito neste projeto, os desafios e as tecnologias utilizadas.",
-    link: "/portfolio/projeto-2",
+      "Website institucional que destaca soluções ambientais com design profissional e navegação intuitiva para clientes corporativos.",
+    link: "/portfolio/projeto-4",
   },
   {
     image: project3Image,
     title: "ERP - Data Age",
     description:
-      "Uma breve descrição do que foi feito neste projeto, os desafios e as tecnologias utilizadas.",
+      "Redesign de interface para sistema ERP, tornando a gestão empresarial mais intuitiva, rápida e agradável para os usuários.",
     link: "/portfolio/projeto-3",
   },
 ];

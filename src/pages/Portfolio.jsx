@@ -6,18 +6,19 @@ import styles from "./Portfolio.module.css";
 import project1Image from "../assets/projeto-1.png";
 import project2Image from "../assets/projeto-2.png";
 import project3Image from "../assets/projeto-dataage-1.png";
+import project4Image from "../assets/projeto-aram01.png";
 
 // Crie uma lista com os dados de TODOS os seus projetos
 const projects = [
   {
-    image: project1Image,
-    title: "Clínica Médica",
+    image: project4Image,
+    title: "Aram Ambiental",
     category: "Website Institucional",
-    link: "/portfolio/projeto-1",
+    link: "/portfolio/projeto-4",
   },
   {
     image: project2Image,
-    title: "Tapeçaria Automotiva",
+    title: "Auto Sport",
     category: "Website Institucional",
     link: "/portfolio/projeto-2",
   },
@@ -26,6 +27,12 @@ const projects = [
     title: "ERP - Data Age",
     category: "Aplicação Web",
     link: "/portfolio/projeto-3",
+  },
+  {
+    image: project1Image,
+    title: "Vida & Saúde",
+    category: "Website Institucional",
+    link: "/portfolio/projeto-1",
   },
 ];
 
