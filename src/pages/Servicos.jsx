@@ -1,7 +1,9 @@
 // src/pages/Servicos.jsx
 import { Helmet } from "react-helmet-async";
 import styles from "./Servicos.module.css";
-import { FiLayout, FiCode, FiTrendingUp } from "react-icons/fi";
+import { FiLayout, FiCode, FiTrendingUp, FiSettings } from "react-icons/fi";
+import { SiGoogleads } from "react-icons/si";
+import { LuImageMinus } from "react-icons/lu";
 import CTASection from "../components/CTASection.jsx"; // Reutilizando a seção de CTA
 
 const services = [
@@ -34,6 +36,42 @@ const services = [
       "Otimização de Imagens",
       "Performance Web",
       "Google Analytics",
+    ],
+  },
+  {
+    icon: <SiGoogleads size={50} />,
+    title: "Gestão Estratégica de Google Ads",
+    description:
+      "Criamos e gerenciamos campanhas de anúncios no Google Ads com foco em resultados mensuráveis. Nossa abordagem combina pesquisa de palavras-chave estratégicas, segmentação precisa de público e otimização contínua de lances para maximizar seu ROI. Acompanhamos métricas como CTR, CPC e taxa de conversão, ajustando as campanhas em tempo real para garantir que cada real investido traga o máximo retorno possível, atraindo clientes qualificados e prontos para converter.",
+    tags: [
+      "Pesquisa de Palavras-Chave",
+      "Otimização de Campanhas",
+      "Análise de ROI",
+      "Google Analytics 4",
+    ],
+  },
+  {
+    icon: <LuImageMinus size={50} />,
+    title: "Identidade Visual e Branding",
+    description:
+      "Desenvolvemos identidades visuais completas e memoráveis que capturam a essência da sua marca e criam conexão emocional com seu público. Do conceito à execução, criamos logotipos únicos, paletas de cores estratégicas, tipografia personalizada e guias de marca detalhados. Cada elemento visual é pensado para fortalecer o posicionamento do seu negócio no mercado, transmitir profissionalismo e garantir consistência em todos os pontos de contato com seus clientes.",
+    tags: [
+      "Criação de Logotipo",
+      "Paleta de Cores",
+      "Manual de Marca",
+      "Aplicações Visuais",
+    ],
+  },
+  {
+    icon: <FiSettings size={50} />,
+    title: "Manutenção e Suporte Técnico",
+    description:
+      "Seu site é um investimento que precisa de cuidados contínuos. Oferecemos planos de manutenção que incluem atualizações regulares de segurança, backups automáticos, monitoramento de uptime, correção de bugs e otimizações de performance. Nossa equipe está sempre disponível para resolver problemas técnicos rapidamente, implementar melhorias e garantir que seu site esteja sempre no ar, rápido e funcionando perfeitamente. Você foca no seu negócio, nós cuidamos da tecnologia.",
+    tags: [
+      "Atualizações de Segurança",
+      "Backups Automáticos",
+      "Monitoramento 24/7",
+      "Suporte Prioritário",
     ],
   },
 ];
