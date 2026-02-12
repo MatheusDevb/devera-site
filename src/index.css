@@ -18,14 +18,36 @@
 }
 
 /* 
-  2. Reset e Padrões Globais (Body)
+  2. Prevenir Scroll Horizontal Global
+  ------------------------------------
+  Garante que nenhum elemento ultrapasse a largura da tela.
+*/
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* 
+  3. Box-sizing para todos os elementos
+  ------------------------------------
+  Garante que padding e border sejam incluídos na largura total.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 
+  4. Reset e Padrões Globais (Body)
   ------------------------------------
   Resetamos margens e definimos fontes e cores padrão para o corpo do site.
 */
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 
   font-family: var(--font-secondary); /* Fonte padrão para textos */
   background-color: var(--white);
@@ -36,7 +58,17 @@ body {
 }
 
 /* 
-  3. Padrões para Títulos
+  5. Garantir que o root não ultrapasse a tela
+  ------------------------------------
+*/
+#root {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* 
+  6. Padrões para Títulos
   ------------------------------------
   Definimos a fonte primária para todos os títulos (h1, h2, etc).
 */
@@ -48,10 +80,12 @@ h5,
 h6 {
   font-family: var(--font-primary); /* Fonte padrão para títulos */
   color: var(--purple);
+  margin: 0; /* Remove margem padrão dos títulos */
+  padding: 0;
 }
 
 /* 
-  4. Reset para Links
+  7. Reset para Links
   ------------------------------------
   Removemos a decoração padrão dos links.
 */
@@ -60,11 +94,33 @@ a {
   text-decoration: none; /* Remove o sublinhado */
 }
 
+/* 
+  8. Garantir que imagens não ultrapassem o container
+  ------------------------------------
+*/
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 
+  9. Garantir que vídeos e iframes sejam responsivos
+  ------------------------------------
+*/
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
 /* --- Animações de Scroll --- */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
 .fade-in.visible {

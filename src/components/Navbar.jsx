@@ -1,24 +1,50 @@
 // src/components/Navbar.jsx
-import { NavLink } from "react-router-dom"; // 1. Mude a importação para NavLink
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import logoSrc from "../assets/logo.svg";
 
 function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className={styles.navbar}>
-      {/* 2. Use uma tag <img> para o logo */}
-      <NavLink to="/" className={styles.logoLink}>
+      {/* Logo */}
+      <NavLink to="/" className={styles.logoLink} onClick={closeMenu}>
         <img src={logoSrc} alt="Logo da Devéra" className={styles.logoImg} />
       </NavLink>
 
-      <ul className={styles.navList}>
+      {/* Botão Hambúrguer (visível apenas no mobile) */}
+      <button
+        className={`${styles.hamburger} ${isMenuOpen ? styles.open : ""}`}
+        onClick={toggleMenu}
+        aria-label="Menu de navegação"
+        aria-expanded={isMenuOpen}
+      >
+        <span className={styles.hamburgerLine}></span>
+        <span className={styles.hamburgerLine}></span>
+        <span className={styles.hamburgerLine}></span>
+      </button>
+
+      {/* Menu de Navegação */}
+      <ul
+        className={`${styles.navList} ${isMenuOpen ? styles.navListOpen : ""}`}
+      >
         <li>
-          {/* 2. Substitua Link por NavLink e use a função no className */}
           <NavLink
             to="/sobre"
             className={({ isActive }) =>
               isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
             }
+            onClick={closeMenu}
           >
             Sobre
           </NavLink>
@@ -29,6 +55,7 @@ function Navbar() {
             className={({ isActive }) =>
               isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
             }
+            onClick={closeMenu}
           >
             Serviços
           </NavLink>
@@ -39,6 +66,7 @@ function Navbar() {
             className={({ isActive }) =>
               isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
             }
+            onClick={closeMenu}
           >
             Portfólio
           </NavLink>
@@ -49,11 +77,15 @@ function Navbar() {
             className={({ isActive }) =>
               isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
             }
+            onClick={closeMenu}
           >
             Contato
           </NavLink>
         </li>
       </ul>
+
+      {/* Overlay (fundo escuro quando menu aberto no mobile) */}
+      {isMenuOpen && <div className={styles.overlay} onClick={closeMenu}></div>}
     </nav>
   );
 }

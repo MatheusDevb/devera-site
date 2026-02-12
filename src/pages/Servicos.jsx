@@ -39,18 +39,6 @@ const services = [
     ],
   },
   {
-    icon: <SiGoogleads size={50} />,
-    title: "Gestão Estratégica de Google Ads",
-    description:
-      "Criamos e gerenciamos campanhas de anúncios no Google Ads com foco em resultados mensuráveis. Nossa abordagem combina pesquisa de palavras-chave estratégicas, segmentação precisa de público e otimização contínua de lances para maximizar seu ROI. Acompanhamos métricas como CTR, CPC e taxa de conversão, ajustando as campanhas em tempo real para garantir que cada real investido traga o máximo retorno possível, atraindo clientes qualificados e prontos para converter.",
-    tags: [
-      "Pesquisa de Palavras-Chave",
-      "Otimização de Campanhas",
-      "Análise de ROI",
-      "Google Analytics 4",
-    ],
-  },
-  {
     icon: <LuImageMinus size={50} />,
     title: "Identidade Visual e Branding",
     description:
@@ -60,6 +48,18 @@ const services = [
       "Paleta de Cores",
       "Manual de Marca",
       "Aplicações Visuais",
+    ],
+  },
+  {
+    icon: <SiGoogleads size={50} />,
+    title: "Gestão Estratégica de Google Ads",
+    description:
+      "Criamos e gerenciamos campanhas de anúncios no Google Ads com foco em resultados mensuráveis. Nossa abordagem combina pesquisa de palavras-chave estratégicas, segmentação precisa de público e otimização contínua de lances para maximizar seu ROI. Acompanhamos métricas como CTR, CPC e taxa de conversão, ajustando as campanhas em tempo real para garantir que cada real investido traga o máximo retorno possível, atraindo clientes qualificados e prontos para converter.",
+    tags: [
+      "Pesquisa de Palavras-Chave",
+      "Otimização de Campanhas",
+      "Análise de ROI",
+      "Google Analytics 4",
     ],
   },
   {

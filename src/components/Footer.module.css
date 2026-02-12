@@ -31,8 +31,14 @@
 /* Divisor */
 .divider {
   height: 1px;
-  background: linear-gradient(to right, transparent, #444, transparent);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #333 50%,
+    transparent 100%
+  );
   margin-bottom: 4rem;
+  opacity: 0.5;
 }
 
 /* Corpo Principal */

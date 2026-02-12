@@ -18,6 +18,21 @@ const values = [
     description:
       "Trabalhamos ao seu lado em cada etapa do projeto, com comunicação clara e um processo totalmente transparente.",
   },
+  {
+    title: "Foco em Resultados",
+    description:
+      "Nosso compromisso vai além do design bonito. Criamos soluções que convertem visitantes em clientes e geram resultados mensuráveis para o seu negócio.",
+  },
+  {
+    title: "Qualidade Acima de Tudo",
+    description:
+      "Código limpo, design impecável e testes rigorosos. Nossa obsessão por qualidade garante produtos digitais robustos, escaláveis e duradouros.",
+  },
+  {
+    title: "Agilidade e Eficiência",
+    description:
+      "Valorizamos seu tempo. Trabalhamos com processos otimizados e entregas rápidas, sem abrir mão da excelência técnica e criativa.",
+  },
 ];
 
 function Sobre() {

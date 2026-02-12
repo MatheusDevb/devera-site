@@ -33,16 +33,16 @@ const services = [
       "Posicionamos seu site no topo dos buscadores, otimizando a estrutura e o conteúdo para atrair mais visitantes qualificados.",
   },
   {
-    icon: <SiGoogleads size={40} />,
-    title: "Gestão de Google Ads",
-    description:
-      "Gerenciamos suas campanhas de Google Ads com estratégia e análise de dados, atraindo clientes qualificados e maximizando seu retorno sobre investimento.",
-  },
-  {
     icon: <LuImageMinus size={40} />,
     title: "Identidade Visual",
     description:
       "Criamos identidades visuais marcantes e coerentes, desde logotipos até guias de marca, para fortalecer o posicionamento do seu negócio.",
+  },
+  {
+    icon: <SiGoogleads size={40} />,
+    title: "Gestão de Google Ads",
+    description:
+      "Gerenciamos suas campanhas de Google Ads com estratégia e análise de dados, atraindo clientes qualificados e maximizando seu retorno sobre investimento.",
   },
   {
     icon: <FiSettings size={40} />,
